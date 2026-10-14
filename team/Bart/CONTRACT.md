@@ -1,6 +1,6 @@
 # Contract: Bart, P2 Intelligence, seed data & assembly
 
-Work on `main`. You're the only one who pushes to it. `AGENTS.md` wins any disagreement. Your machine is the only one with the OpenAI key.
+Work on `main`. You're the only one who pushes to it. `AGENTS.md` wins any disagreement. Your machine is the only one with the Anthropic API key.
 
 ## You own
 `extension/background/ai.js`, `extension/background/analysis.js`, any new `extension/background/*.js` except `worker.js`, `extension/seed/`, `AGENTS.md`, `team/`, `.github/`. At assembly you also set the two similarity thresholds in `extension/shared/config.js`.

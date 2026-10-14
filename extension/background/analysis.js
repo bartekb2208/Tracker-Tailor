@@ -1,6 +1,6 @@
 // Owner: Bart (P2). Public interface: these three exports are frozen (see AGENTS.md).
 // The worker calls them; each one reads and writes chrome.storage.local.
-import { analyzePage, embed, cosine, nameThread, writeInsights } from "./ai.js";
+import { analyzePage, embedPage, cosine, nameThread, writeInsights } from "./ai.js";
 
 const log = (...a) => console.log("[RH:P2]", ...a);
 const round2 = (n) => Math.round(n * 100) / 100;
@@ -17,20 +17,18 @@ async function context() {
   const { settings = {} } = await chrome.storage.local.get("settings");
   const CFG = { ...RH_CONFIG, ...(settings.demoMode ? RH_DEMO : {}) };
   const key = settings.apiKey || "";
-  return { key, CFG, mode: key ? "openai" : "mock" };
+  return { key, CFG, mode: key ? "claude" : "mock" };
 }
 
-// Analyse + embed one visit, keeping any fields already present (seed data has labels but no embedding).
+// Analyse + embed one visit. Labels from this mode are reused; seed labels without keywords get re-analysed.
 async function analyse(key, mode, visit, existing) {
-  const hasLabels = existing?.topics?.length && existing?.summary;
-  const labels = hasLabels ? existing : await analyzePage(key, visit);
-  const fresh = existing?.embedding?.length && existing.embedModel === mode;
-  const embedding = fresh ? existing.embedding : await embed(key, `${visit.title}\n${visit.excerpt || ""}`);
+  const reuse = existing?.keywords?.length && existing.embedModel === mode;
+  const labels = reuse ? existing : await analyzePage(key, visit);
   return {
     visitId: visit.id,
-    topics: labels.topics, concepts: labels.concepts, sourceType: labels.sourceType,
+    topics: labels.topics, concepts: labels.concepts, keywords: labels.keywords, sourceType: labels.sourceType,
     level: labels.level, summary: labels.summary,
-    embedding, embedModel: mode,
+    embedding: embedPage(visit, labels), embedModel: mode,
     threadId: existing?.threadId ?? null
   };
 }
@@ -192,6 +190,6 @@ export async function generateInsights() {
     nextReads: out.nextReads || []
   };
   await chrome.storage.local.set({ insights });
-  log("insights written, mode", key ? "openai" : "mock");
+  log("insights written, mode", key ? "claude" : "mock");
   return { quiz: insights.quiz.length };
 }

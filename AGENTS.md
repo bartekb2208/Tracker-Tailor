@@ -7,7 +7,7 @@ Every AI agent in this repo follows this file. Read all of it before writing cod
 A Chrome extension (Manifest V3) for the Tracker & Tailor hackathon.
 
 - **Track:** in the background, notice which articles the user actually reads (active time + scroll), and which page led to which.
-- **Aggregate:** OpenAI labels each page and embeds it; pages group into learning threads; similarity to the first page of a chain measures drift.
+- **Aggregate:** Claude (Anthropic API) labels each page with topics and keywords; keyword vectors give similarity; pages group into learning threads; similarity to the first page of a chain measures drift.
 - **Tailor:** an in-page alert when the user is deep in a rabbit hole (with "Back to start"), plus gaps, a quiz and next reads on the dashboard.
 
 ## Deadlines (BST, today)
@@ -36,7 +36,7 @@ A Chrome extension (Manifest V3) for the Tracker & Tailor hackathon.
 2. **No build step.** Plain JavaScript, HTML and CSS. Worker files are ES modules. Content scripts are classic scripts (no `import`/`export`). No npm, TypeScript, React, Tailwind or bundlers. `extension/` must load unpacked as-is.
 3. **No remote code.** No CDN `<script>` tags. Libraries are files in `extension/lib/`.
 4. **Names and shapes below are frozen.** You may add optional fields. Never rename or remove a key, field, message or export.
-5. **OpenAI is called only from `extension/background/ai.js`.**
+5. **The Claude API is called only from `extension/background/ai.js`.** `settings.apiKey` holds an Anthropic key (`sk-ant-...`).
 6. **Everything works with no API key** (mock mode). Only Bart's machine has the key.
 7. **Never write an API key into a file or a commit.** It lives in `chrome.storage` via the Options page.
 8. **Storage is the bus.** Components talk through `chrome.storage.local` and the messages below. Pages re-render on `chrome.storage.onChanged`. No polling.

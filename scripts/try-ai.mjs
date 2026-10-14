@@ -1,7 +1,7 @@
 import fs from "node:fs";
 // Owner: Bart (P2). Runs the AI layer against seed data outside Chrome.
 // Mock:  node scripts/try-ai.mjs
-// Real:  OPENAI_API_KEY=sk-... node scripts/try-ai.mjs
+// Real:  ANTHROPIC_API_KEY=sk-... node scripts/try-ai.mjs
 import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -18,7 +18,7 @@ globalThis.chrome = {
 await import(R + "/extension/shared/config.js");
 const { onVisit, reindexAll, generateInsights } = await import(R + "/extension/background/analysis.js");
 const seed = JSON.parse(fs.readFileSync(path.join(ROOT, "extension/seed/seed.json"), "utf8"));
-Object.assign(store, { settings: { demoMode: true, apiKey: process.env.OPENAI_API_KEY || "" }, ...structuredClone(seed), tabState: {} });
+Object.assign(store, { settings: { demoMode: true, apiKey: process.env.ANTHROPIC_API_KEY || "" }, ...structuredClone(seed), tabState: {} });
 
 console.log("reindex:", await reindexAll());
 console.log("threads:", store.threads.map(t => `${t.label} ${t.visitIds.length}p ${t.minutes}m c${t.centroid.length}`));
