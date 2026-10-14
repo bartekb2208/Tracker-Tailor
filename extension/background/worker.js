@@ -9,6 +9,7 @@ const DATA_KEYS = ["visits", "tabState", "analyses", "threads", "hole", "insight
 
 chrome.runtime.onInstalled.addListener(() => {
   chrome.sidePanel.setPanelBehavior({ openPanelOnActionClick: true }).catch(console.error);
+  chrome.action.setBadgeBackgroundColor({ color: "#d85d35" });
 });
 
 chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
@@ -78,6 +79,6 @@ async function updated({ id, activeSecs, scrollDepth }) {
 chrome.storage.onChanged.addListener((changes, area) => {
   if (area !== "local" || !("hole" in changes)) return;
   const depth = changes.hole.newValue?.depth ?? 0;
-  chrome.action.setBadgeBackgroundColor({ color: "#2457C5" }).catch((error) => log("badge color", error));
+  chrome.action.setBadgeBackgroundColor({ color: "#d85d35" }).catch((error) => log("badge color", error));
   chrome.action.setBadgeText({ text: depth >= 2 ? String(depth) : "" }).catch((error) => log("badge text", error));
 });
