@@ -23,7 +23,11 @@ async function context() {
 // Analyse + embed one visit. Labels from this mode are reused; seed labels without keywords get re-analysed.
 async function analyse(key, mode, visit, existing) {
   const reuse = existing?.keywords?.length && existing.embedModel === mode;
-  const labels = reuse ? existing : await analyzePage(key, visit);
+  const seedLabels = existing?.topics?.length && existing?.summary;
+  const labels = reuse ? existing
+    // Mock mode keeps hand-written seed labels and derives keywords from them
+    : mode === "mock" && seedLabels ? { ...existing, keywords: [...existing.topics, ...(existing.concepts || [])].map((k) => k.toLowerCase()) }
+    : await analyzePage(key, visit);
   return {
     visitId: visit.id,
     topics: labels.topics, concepts: labels.concepts, keywords: labels.keywords, sourceType: labels.sourceType,
@@ -52,12 +56,14 @@ function addToThread(t, visit, a) {
 
 // Thread rule: join the closest centroid above the threshold, else start a new thread.
 async function assignThread(threads, a, visit, key, CFG) {
+  // Mock keyword vectors overlap less than Claude's, so mock mode joins at a lower bar
+  const joinAt = key ? CFG.THREAD_JOIN_SIMILARITY : Math.min(CFG.THREAD_JOIN_SIMILARITY, 0.15);
   let best = null, bestSim = -1;
   for (const t of threads) {
     const s = cosine(a.embedding, t.centroid);
     if (s > bestSim) { best = t; bestSim = s; }
   }
-  if (best && bestSim >= CFG.THREAD_JOIN_SIMILARITY) {
+  if (best && bestSim >= joinAt) {
     addToThread(best, visit, a);
     log("joined thread", best.label, round2(bestSim));
     return best;
