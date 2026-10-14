@@ -27,7 +27,7 @@ A Chrome extension (Manifest V3) for the Tracker & Tailor hackathon.
 |---|---|---|---|---|
 | Luke | P1 Capture & core | Codex | `luke-capture` | `extension/manifest.json`, `extension/shared/`, `extension/content/capture.js`, `extension/background/worker.js`, `extension/options/`, `extension/lib/Readability.js` |
 | Marc | P3 Interface | Copilot Pro | `marc-interface` | `extension/dashboard/`, `extension/sidepanel/`, `extension/content/toast.js`, `extension/lib/vis-network.min.js` |
-| Bart | P2 Intelligence, seed data, assembly | Claude Code | `main` | `extension/background/ai.js`, `extension/background/analysis.js`, any new `extension/background/*.js` except `worker.js`, `extension/seed/`, `AGENTS.md`, `team/`, `.github/` |
+| Bart | P2 Intelligence, seed data, assembly | Claude Code | `main` | `extension/background/ai.js`, `extension/background/analysis.js`, any new `extension/background/*.js` except `worker.js`, `extension/seed/`, `scripts/`, `AGENTS.md`, `team/`, `.github/` |
 | Bart | P4 Demo, pitch & testing | Copilot Pro (when it arrives) | `rob-demo` | `pitch/` |
 
 ## Hard rules
