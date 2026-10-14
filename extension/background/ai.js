@@ -104,7 +104,7 @@ export function cosine(a, b) {
 
 const STOP = new Set(("the and for with from that this what your you how why are was were has have its into about " +
   "when which their they them than then also more most some such only over just like can will not but all any one two " +
-  "wikipedia blog guide com www http https org html react's").split(" "));
+  "his her him she who our its wikipedia blog guide com www http https org html react's").split(" "));
 
 const words = (text) => (text.toLowerCase().match(/[a-z][a-z0-9]{2,}/g) || []).filter((w) => !STOP.has(w));
 
@@ -146,7 +146,12 @@ function mockAnalyze(v) {
 }
 
 function mockLabel(analysis, visit) {
-  return analysis.topics?.[0] || cleanTitle(visit.title).split(" ").slice(0, 3).join(" ") || "New thread";
+  // 2-4 words: title words first, then concepts as filler.
+  const cap = (w) => w[0].toUpperCase() + w.slice(1);
+  const ok = (w) => !STOP.has(w.toLowerCase());
+  const fromTitle = (cleanTitle(visit.title).match(/[A-Za-z][A-Za-z0-9']{2,}/g) || []).filter(ok).map(cap).slice(0, 3);
+  const label = [...new Set([...fromTitle, ...(analysis.concepts || []).filter(ok).map(cap)])].slice(0, Math.max(2, fromTitle.length));
+  return label.length >= 2 ? label.join(" ") : `${label[0] || "New"} Reading`;
 }
 
 function mockInsights({ threads, pages }) {
