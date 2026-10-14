@@ -16,8 +16,8 @@ globalThis.RH_CONFIG = {
 
 // Demo mode (toggle on the Options page) swaps in faster values
 globalThis.RH_DEMO = {
-  MIN_ACTIVE_SECS: 10,
-  MIN_SCROLL_DEPTH: 0.2,
+  MIN_ACTIVE_SECS: 8,
+  MIN_SCROLL_DEPTH: 0.03, // long Wikipedia pages are 35-80k px tall; 3% is about one screen
   HOLE_ALERT_DEPTH: 3,
   HOLE_ALERT_SIMILARITY: 0.5
 };
