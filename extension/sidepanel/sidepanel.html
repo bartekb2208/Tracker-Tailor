@@ -7,7 +7,12 @@
 </head>
 <body>
   <!-- Owner: Marc (P3). Live path of the current hole. -->
-  <main id="app">Rabbit Hole side panel (stub)</main>
+  <main id="app">
+    <header class="panel-header"><p class="eyebrow">CURRENT TRAIL</p><h1>Rabbit Hole</h1><p class="subtitle">Your path from the first read.</p></header>
+    <section id="hole-view" hidden><div class="hole-summary"><span id="hole-depth">0 hops</span><span id="hole-alert"></span></div><ol id="hop-list" class="hop-list"></ol><div class="actions"><button class="button button-accent" id="back-to-start" type="button">↩ Back to start</button><button class="button" id="open-dashboard" type="button">Open dashboard</button></div></section>
+    <p id="empty-state" class="empty-state">No rabbit hole yet. Keep reading to build a trail.</p>
+  </main>
+  <script src="../shared/config.js"></script>
   <script src="sidepanel.js"></script>
 </body>
 </html>

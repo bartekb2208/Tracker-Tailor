@@ -2,6 +2,10 @@
 // Renders HOLE_ALERT inside a Shadow DOM so the site's CSS can't touch it.
 chrome.runtime.onMessage.addListener((msg) => {
   if (msg?.type !== "HOLE_ALERT") return;
-  console.log("[RH:P3] HOLE_ALERT", msg.payload);
-  // TODO(Marc): show the toast with "Back to start" (hops[0].url) and "Keep going"
+  const hole = msg.payload; const hops = hole?.hops || []; if (!hops.length) return;
+  document.getElementById("rh-hole-toast")?.remove();
+  const host = document.createElement("div"); host.id = "rh-hole-toast"; const shadow = host.attachShadow({ mode: "open" });
+  const style = document.createElement("style"); style.textContent = `:host { all: initial; } .toast { background: #fff; border: 1px solid #e2b19f; border-left: 5px solid #d85d35; border-radius: 8px; box-shadow: 0 14px 40px #17221d2b; color: #17221d; font: 14px system-ui, sans-serif; padding: 18px; width: min(360px, calc(100vw - 32px)); } h2 { font-size: 18px; margin: 0 0 8px; } p { color: #68756e; line-height: 1.45; margin: 0 0 16px; } .actions { display: flex; gap: 8px; } button { border: 1px solid #d9e1db; border-radius: 5px; cursor: pointer; font: inherit; font-weight: 700; padding: 9px 11px; } .primary { background: #d85d35; border-color: #d85d35; color: #fff; } @media (prefers-color-scheme: dark) { .toast { background: #202a24; color: #edf4ee; } p { color: #a4b2a8; } button { background: #202a24; color: #edf4ee; border-color: #39483e; } }`;
+  const toast = document.createElement("div"); toast.className = "toast"; const title = document.createElement("h2"); title.textContent = `You're ${Math.max(0, Number(hole.depth || hops.length) - 1)} links away from ${hops[0].title}`; const body = document.createElement("p"); body.textContent = `You started ${hole.minutes || 0} minutes ago. You're now reading ${hops[hops.length - 1].title}.`; const actions = document.createElement("div"); actions.className = "actions"; const back = document.createElement("button"); back.className = "primary"; back.textContent = "Back to start"; const keep = document.createElement("button"); keep.textContent = "Keep going"; actions.append(back, keep); toast.append(title, body, actions); shadow.append(style, toast); Object.assign(host.style, { position: "fixed", top: "20px", right: "20px", zIndex: "2147483647" }); document.documentElement.append(host);
+  back.addEventListener("click", () => { location.href = hops[0].url; }); keep.addEventListener("click", () => host.remove()); console.log("[RH:P3] HOLE_ALERT", hole);
 });
