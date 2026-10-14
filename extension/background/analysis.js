@@ -83,11 +83,12 @@ const hop = (visit, similarity) => ({ visitId: visit.id, title: visit.title, url
 function extendHole(hole, visit, a, analyses) {
   const last = hole?.hops?.at(-1);
   if (!last || visit.prevVisitId !== last.visitId) {
-    return { startVisitId: visit.id, hops: [hop(visit, 1)], depth: 1, alerted: false, updatedAt: Date.now() };
+    return { startVisitId: visit.id, hops: [hop(visit, 1)], depth: 1, alerted: false, startedAt: visit.startedAt, minutes: 0, updatedAt: Date.now() };
   }
   const sim = round2(cosine(a.embedding, analyses[hole.startVisitId]?.embedding));
   const hops = [...hole.hops, hop(visit, sim)];
-  return { ...hole, hops, depth: hops.length, updatedAt: Date.now() };
+  const minutes = hole.startedAt ? Math.max(1, Math.round((Date.now() - hole.startedAt) / 60000)) : 0;
+  return { ...hole, hops, depth: hops.length, minutes, updatedAt: Date.now() };
 }
 
 // The newest visit's chain, followed back through prevVisitId.
@@ -99,7 +100,8 @@ function holeFromNewestChain(visits, analyses) {
   for (let v = newest; v && chain.length < 50; v = byId[v.prevVisitId]) chain.unshift(v);
   const start = analyses[chain[0].id]?.embedding;
   const hops = chain.map((v, i) => hop(v, i === 0 ? 1 : round2(cosine(analyses[v.id]?.embedding, start))));
-  return { startVisitId: chain[0].id, hops, depth: hops.length, alerted: true, updatedAt: newest.startedAt };
+  const minutes = Math.max(1, Math.round((newest.startedAt - chain[0].startedAt) / 60000));
+  return { startVisitId: chain[0].id, hops, depth: hops.length, alerted: true, startedAt: chain[0].startedAt, minutes, updatedAt: newest.startedAt };
 }
 
 // Called after Luke's worker stores a new visit.
