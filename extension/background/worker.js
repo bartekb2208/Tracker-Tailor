@@ -1,8 +1,8 @@
 // Owner: Luke (P1). Message router and storage writes.
 // Chrome can stop this worker at any time, so it keeps no state in variables.
 import "../shared/config.js";
-import { onVisit, reindexAll, generateInsights } from "./analysis.js"; // Rob (P2)
-import { loadSeed } from "../seed/load-seed.js";                       // Bart (P4)
+import { onVisit, reindexAll, generateInsights } from "./analysis.js"; // Bart (P2)
+import { loadSeed } from "../seed/load-seed.js";                       // Bart (seed)
 
 const log = (...a) => console.log("[RH:P1]", ...a);
 const DATA_KEYS = ["visits", "tabState", "analyses", "threads", "hole", "insights"];
@@ -42,9 +42,13 @@ async function config() {
 async function captured(visit, tab) {
   const CFG = await config();
   const { visits = [], tabState = {} } = await chrome.storage.local.get(["visits", "tabState"]);
-  if (visits.some((v) => v.id === visit.id)) return {};
+  if (visits.some((v) => v.id === visit.id)) return { id: visit.id };
 
   const now = Date.now();
+  if (visits.some((v) => v.url === visit.url && now - (v.capturedAt ?? v.startedAt) < 120000)) {
+    return { ignored: true };
+  }
+  visit.capturedAt = now;
   const recent = (s) => (s && now - s.at < CFG.CHAIN_GAP_MINS * 60000 ? s.visitId : null);
   visit.tabId = tab?.id ?? null;
   visit.prevVisitId = recent(tabState[visit.tabId]) ?? recent(tabState[tab?.openerTabId]) ?? null;
@@ -74,5 +78,6 @@ async function updated({ id, activeSecs, scrollDepth }) {
 chrome.storage.onChanged.addListener((changes, area) => {
   if (area !== "local" || !("hole" in changes)) return;
   const depth = changes.hole.newValue?.depth ?? 0;
-  chrome.action.setBadgeText({ text: depth >= 2 ? String(depth) : "" });
+  chrome.action.setBadgeBackgroundColor({ color: "#2457C5" }).catch((error) => log("badge color", error));
+  chrome.action.setBadgeText({ text: depth >= 2 ? String(depth) : "" }).catch((error) => log("badge text", error));
 });
