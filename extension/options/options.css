@@ -1,14 +1,4 @@
 /* Owner: Luke (P1). */
-:root { color-scheme: light dark; font: 16px/1.5 system-ui, sans-serif; }
-body { margin: 0; padding: 32px 20px; }
-main { max-width: 640px; margin: auto; }
-h1 { font-size: 1.8rem; } h2 { font-size: 1.2rem; margin-top: 32px; }
-p { opacity: .8; }
-label { display: block; margin: 12px 0 6px; }
-input[type="password"] { width: 100%; box-sizing: border-box; padding: 10px; font: inherit; }
-.toggle { margin: 16px 0; } .toggle input { margin-right: 8px; }
-button { font: inherit; padding: 8px 14px; cursor: pointer; }
-button:disabled { cursor: wait; opacity: .6; }
-.action { display: flex; align-items: center; gap: 12px; margin: 14px 0; flex-wrap: wrap; }
-output { margin-left: 8px; overflow-wrap: anywhere; }
-output[data-error="true"] { color: #d33b32; }
+:root { color-scheme: light dark; --bg: #e9edf0; --surface: #fffdf8; --ink: #13293d; --muted: #657482; --line: #c9d2d8; --accent: #e4573d; --accent-soft: #ffe5dc; --cyan: #1d9ba6; font: 16px/1.5 system-ui, sans-serif; }
+* { box-sizing: border-box; } body { background: var(--bg); color: var(--ink); margin: 0; padding: 42px 20px; } body::before { background: repeating-linear-gradient(0deg, transparent 0 31px, #13293d0b 32px); content: ""; inset: 0; pointer-events: none; position: fixed; z-index: -1; } main { background: var(--surface); border: 1px solid var(--ink); box-shadow: 8px 8px 0 #1d9ba633; margin: auto; max-width: 640px; padding: 30px; } h1 { font-family: Georgia, serif; font-size: 2.4rem; font-weight: 500; letter-spacing: -.05em; margin: 0 0 8px; } h2 { border-top: 2px solid var(--ink); font-family: Georgia, serif; font-size: 1.25rem; font-weight: 500; margin-top: 34px; padding-top: 18px; } p { color: var(--muted); } label { display: block; margin: 14px 0 6px; } input[type="password"] { background: transparent; border: 1px solid var(--line); color: inherit; padding: 10px; width: 100%; } .toggle { margin: 16px 0; } .toggle input { accent-color: var(--accent); margin-right: 8px; } button { background: var(--surface); border: 1px solid var(--ink); box-shadow: 3px 3px 0 var(--ink); color: inherit; cursor: pointer; font: inherit; font-weight: 800; padding: 8px 14px; } button:disabled { cursor: wait; opacity: .6; } .action { align-items: center; display: flex; flex-wrap: wrap; gap: 12px; margin: 14px 0; } output { color: var(--cyan); margin-left: 8px; overflow-wrap: anywhere; } output[data-error="true"] { color: var(--accent); }
+@media (prefers-color-scheme: dark) { :root { --bg: #101b27; --surface: #172638; --ink: #eef5f6; --muted: #a9bac2; --line: #385064; --accent-soft: #4d292b; } body::before { background-image: repeating-linear-gradient(0deg, transparent 0 31px, #ffffff08 32px); } }
