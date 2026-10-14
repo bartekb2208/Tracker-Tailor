@@ -106,6 +106,7 @@ Send with `chrome.runtime.sendMessage({ type, payload })`. The worker replies `{
 { startVisitId,
   hops: [{ visitId, title, url, similarity }],  // similarity to hop 0, hop 0 = 1
   depth,              // hops.length
+  startedAt, minutes, // optional: when hop 0 was read, minutes since then
   alerted,            // true once HOLE_ALERT was sent for this hole
   updatedAt }
 
