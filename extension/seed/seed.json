@@ -1,0 +1,931 @@
+{
+ "visits": [
+  {
+   "id": "v_1791536700000_a10",
+   "url": "https://react.dev/reference/react/useEffect",
+   "domain": "react.dev",
+   "title": "useEffect – React",
+   "excerpt": "useEffect is a React Hook that lets you synchronize a component with an external system. Call it at the top level of your component to declare an Effect. Your setup function may optionally return a cleanup function, which React runs before the Effect runs again and when the component is removed.",
+   "startedAt": 1791536700000,
+   "activeSecs": 262,
+   "scrollDepth": 0.91,
+   "fromUrl": "https://www.google.com/",
+   "tabId": 101,
+   "prevVisitId": null
+  },
+  {
+   "id": "v_1791536987000_a21",
+   "url": "https://react.dev/learn/synchronizing-with-effects",
+   "domain": "react.dev",
+   "title": "Synchronizing with Effects – React",
+   "excerpt": "Some components need to synchronize with external systems, such as a chat server or a browser API. Effects let you run code after rendering so that you can synchronize your component with a system outside of React. In development, React mounts components twice to help you find missing cleanup.",
+   "startedAt": 1791536987000,
+   "activeSecs": 318,
+   "scrollDepth": 0.84,
+   "fromUrl": "https://react.dev/reference/react/useEffect",
+   "tabId": 101,
+   "prevVisitId": "v_1791536700000_a10"
+  },
+  {
+   "id": "v_1791537330000_a42",
+   "url": "https://stackoverflow.com/questions/53120972/how-to-call-loading-function-with-react-useeffect-only-once",
+   "domain": "stackoverflow.com",
+   "title": "How to call loading function with React useEffect only once - Stack Overflow",
+   "excerpt": "I want to load data when the component mounts, but my useEffect keeps running on every render and calling the API again. Answer: pass an empty dependency array so the effect only runs after the first render. If the linter complains about missing dependencies, move the function inside the effect.",
+   "startedAt": 1791537330000,
+   "activeSecs": 141,
+   "scrollDepth": 0.62,
+   "fromUrl": "https://react.dev/learn/synchronizing-with-effects",
+   "tabId": 101,
+   "prevVisitId": "v_1791536987000_a21"
+  },
+  {
+   "id": "v_1791577800000_b10",
+   "url": "https://en.wikipedia.org/wiki/Espresso",
+   "domain": "en.wikipedia.org",
+   "title": "Espresso - Wikipedia",
+   "excerpt": "Espresso is a concentrated form of coffee produced by forcing hot water under high pressure through finely ground coffee beans. Originating in Italy, espresso has become one of the most popular coffee-brewing methods worldwide. It is generally thicker than coffee brewed by other methods and has crema on top.",
+   "startedAt": 1791577800000,
+   "activeSecs": 298,
+   "scrollDepth": 0.58,
+   "fromUrl": "https://www.google.com/",
+   "tabId": 102,
+   "prevVisitId": null
+  },
+  {
+   "id": "v_1791578123000_b41",
+   "url": "https://www.baristahustle.com/blog/espresso-recipes-explained/",
+   "domain": "www.baristahustle.com",
+   "title": "Espresso recipes explained: ratio, time and yield - Barista Hustle",
+   "excerpt": "An espresso recipe has three parts: the dose of dry coffee, the yield of liquid espresso, and the time it takes. The ratio between dose and yield shapes strength more than anything else. A 1:2 ratio is a sensible starting point, with lighter roasts often needing longer ratios.",
+   "startedAt": 1791578123000,
+   "activeSecs": 341,
+   "scrollDepth": 0.74,
+   "fromUrl": "https://en.wikipedia.org/wiki/Espresso",
+   "tabId": 102,
+   "prevVisitId": "v_1791577800000_b10"
+  },
+  {
+   "id": "v_1791578489000_b62",
+   "url": "https://www.seriouseats.com/how-to-pull-an-espresso-shot",
+   "domain": "www.seriouseats.com",
+   "title": "How to Pull a Great Espresso Shot | Serious Eats",
+   "excerpt": "A good shot starts before the button: a clean, dry basket, an even distribution of grounds and a level tamp. Channeling, where water finds a weak path through the puck, is behind most uneven shots. Watch the stream: it should start dark and slow, then turn blond near the end.",
+   "startedAt": 1791578489000,
+   "activeSecs": 289,
+   "scrollDepth": 0.86,
+   "fromUrl": "https://www.baristahustle.com/blog/espresso-recipes-explained/",
+   "tabId": 102,
+   "prevVisitId": "v_1791578123000_b41"
+  },
+  {
+   "id": "v_1791621600000_a30",
+   "url": "https://overreacted.io/a-complete-guide-to-useeffect/",
+   "domain": "overreacted.io",
+   "title": "A Complete Guide to useEffect — overreacted",
+   "excerpt": "You wrote a few components with Hooks, maybe even a small app. But something bugs you: why is there sometimes an infinite refetching loop? Why do you get an old state value inside an effect? Each render has its own props and state, and each render has its own effects. Once that clicks, the dependency array stops being mysterious.",
+   "startedAt": 1791621600000,
+   "activeSecs": 604,
+   "scrollDepth": 0.77,
+   "fromUrl": "https://www.google.com/",
+   "tabId": 110,
+   "prevVisitId": null
+  },
+  {
+   "id": "v_1791622229000_a61",
+   "url": "https://dev.to/thekashey/why-your-useeffect-runs-twice-in-react-18-2b3c",
+   "domain": "dev.to",
+   "title": "Why your useEffect runs twice in React 18",
+   "excerpt": "If you upgraded to React 18 and your effects suddenly fire twice in development, nothing is broken. Strict Mode now mounts, unmounts and remounts every component to surface effects that do not clean up after themselves. Production builds still run the effect once.",
+   "startedAt": 1791622229000,
+   "activeSecs": 187,
+   "scrollDepth": 0.95,
+   "fromUrl": "https://overreacted.io/a-complete-guide-to-useeffect/",
+   "tabId": 110,
+   "prevVisitId": "v_1791621600000_a30"
+  },
+  {
+   "id": "v_1791622441000_a52",
+   "url": "https://kentcdodds.com/blog/useeffect-vs-uselayouteffect",
+   "domain": "kentcdodds.com",
+   "title": "useEffect vs useLayoutEffect",
+   "excerpt": "Both hooks have the same signature, but they fire at different times. useEffect runs after the browser has painted, which is what you want most of the time. useLayoutEffect runs synchronously after DOM mutations and before paint, which is useful when you need to measure layout and avoid a visible flicker.",
+   "startedAt": 1791622441000,
+   "activeSecs": 233,
+   "scrollDepth": 0.88,
+   "fromUrl": "https://dev.to/thekashey/why-your-useeffect-runs-twice-in-react-18-2b3c",
+   "tabId": 110,
+   "prevVisitId": "v_1791622229000_a61"
+  },
+  {
+   "id": "v_1791666900000_c20",
+   "url": "https://en.wikipedia.org/wiki/Roman_currency",
+   "domain": "en.wikipedia.org",
+   "title": "Roman currency - Wikipedia",
+   "excerpt": "Roman currency for most of Roman history consisted of gold, silver, bronze, orichalcum and copper coinage. From its introduction to the Republic during the third century BC, well into Imperial times, Roman currency saw many changes in form, denomination, and composition.",
+   "startedAt": 1791666900000,
+   "activeSecs": 322,
+   "scrollDepth": 0.63,
+   "fromUrl": "https://www.google.com/",
+   "tabId": 111,
+   "prevVisitId": null
+  },
+  {
+   "id": "v_1791667247000_c31",
+   "url": "https://en.wikipedia.org/wiki/Denarius",
+   "domain": "en.wikipedia.org",
+   "title": "Denarius - Wikipedia",
+   "excerpt": "The denarius was the standard Roman silver coin from its introduction in the Second Punic War until the reign of Gordian III. Over time its silver content was steadily reduced, a debasement that reflected the growing financial pressure on the empire.",
+   "startedAt": 1791667247000,
+   "activeSecs": 276,
+   "scrollDepth": 0.71,
+   "fromUrl": "https://en.wikipedia.org/wiki/Roman_currency",
+   "tabId": 111,
+   "prevVisitId": "v_1791666900000_c20"
+  },
+  {
+   "id": "v_1791713700000_b20",
+   "url": "https://www.home-barista.com/tips/dialing-in-a-new-bean-t91234.html",
+   "domain": "www.home-barista.com",
+   "title": "Dialing in a new bean: grind first or dose first? - Home-Barista.com",
+   "excerpt": "Every new bag means dialing in again. Most people fix the dose, then adjust grind until the shot hits the target time. Change one variable at a time and taste every shot. Sour and thin usually means under-extracted: grind finer. Bitter and harsh usually means over-extracted: grind coarser.",
+   "startedAt": 1791713700000,
+   "activeSecs": 377,
+   "scrollDepth": 0.81,
+   "fromUrl": "https://www.google.com/",
+   "tabId": 120,
+   "prevVisitId": null
+  },
+  {
+   "id": "v_1791714102000_b31",
+   "url": "https://www.reddit.com/r/espresso/comments/qh2k1v/beginners_guide_to_dialing_in/",
+   "domain": "www.reddit.com",
+   "title": "Beginner's guide to dialing in : r/espresso",
+   "excerpt": "Start with 18 g in, aim for 36 g out in about 28 seconds. Taste it. If it's sour, grind finer; if it's bitter, grind coarser. Don't chase the clock, chase the taste. Weigh your shots, use fresh beans roasted within the last month, and keep notes.",
+   "startedAt": 1791714102000,
+   "activeSecs": 205,
+   "scrollDepth": 0.9,
+   "fromUrl": "https://www.home-barista.com/tips/dialing-in-a-new-bean-t91234.html",
+   "tabId": 120,
+   "prevVisitId": "v_1791713700000_b20"
+  },
+  {
+   "id": "v_1791747900000_c40",
+   "url": "https://en.wikipedia.org/wiki/Crisis_of_the_Third_Century",
+   "domain": "en.wikipedia.org",
+   "title": "Crisis of the Third Century - Wikipedia",
+   "excerpt": "The Crisis of the Third Century was a period in Roman history during which the Roman Empire nearly collapsed under the combined pressures of repeated foreign invasions, civil wars, plague and economic depression. The crisis ended with the accession of Diocletian.",
+   "startedAt": 1791747900000,
+   "activeSecs": 431,
+   "scrollDepth": 0.69,
+   "fromUrl": "https://www.google.com/",
+   "tabId": 121,
+   "prevVisitId": null
+  },
+  {
+   "id": "v_1791748356000_c51",
+   "url": "https://en.wikipedia.org/wiki/Diocletian",
+   "domain": "en.wikipedia.org",
+   "title": "Diocletian - Wikipedia",
+   "excerpt": "Diocletian was Roman emperor from 284 until his abdication in 305. He ended the Crisis of the Third Century, reorganised the empire's administration, introduced the Tetrarchy and attempted to curb inflation with a currency reform and the Edict on Maximum Prices.",
+   "startedAt": 1791748356000,
+   "activeSecs": 389,
+   "scrollDepth": 0.64,
+   "fromUrl": "https://en.wikipedia.org/wiki/Crisis_of_the_Third_Century",
+   "tabId": 121,
+   "prevVisitId": "v_1791747900000_c40"
+  },
+  {
+   "id": "v_1791793800000_b50",
+   "url": "https://en.wikipedia.org/wiki/Coffee_roasting",
+   "domain": "en.wikipedia.org",
+   "title": "Coffee roasting - Wikipedia",
+   "excerpt": "Roasting coffee transforms the chemical and physical properties of green coffee beans into roasted coffee products. The roasting process is what produces the characteristic flavor of coffee by causing the green coffee beans to change in taste. Lighter roasts keep more of the bean's origin character.",
+   "startedAt": 1791793800000,
+   "activeSecs": 264,
+   "scrollDepth": 0.52,
+   "fromUrl": "https://www.google.com/",
+   "tabId": 125,
+   "prevVisitId": null
+  },
+  {
+   "id": "v_1791810000000_a70",
+   "url": "https://react.dev/learn/lifecycle-of-reactive-effects",
+   "domain": "react.dev",
+   "title": "Lifecycle of Reactive Effects – React",
+   "excerpt": "Effects have a different lifecycle from components. An Effect can only do two things: start synchronizing something, and later stop synchronizing it. This cycle can happen multiple times if your Effect depends on props and state that change over time. React provides a linter rule to check that you specified the dependencies correctly.",
+   "startedAt": 1791810000000,
+   "activeSecs": 355,
+   "scrollDepth": 0.71,
+   "fromUrl": "https://www.google.com/",
+   "tabId": 130,
+   "prevVisitId": null
+  },
+  {
+   "id": "v_1791810380000_a81",
+   "url": "https://tkdodo.eu/blog/practical-react-query",
+   "domain": "tkdodo.eu",
+   "title": "Practical React Query | TkDodo's blog",
+   "excerpt": "React Query is not a data fetching library, it is an async state manager. Instead of writing a useEffect that fetches, sets loading state, handles errors and races, you describe a query key and a function, and the library handles caching, deduplication and background refetching for you.",
+   "startedAt": 1791810380000,
+   "activeSecs": 412,
+   "scrollDepth": 0.66,
+   "fromUrl": "https://react.dev/learn/lifecycle-of-reactive-effects",
+   "tabId": 130,
+   "prevVisitId": "v_1791810000000_a70"
+  },
+  {
+   "id": "v_1791810817000_a92",
+   "url": "https://medium.com/@devmatt/stop-fetching-data-in-useeffect-9c4f1a2b7e01",
+   "domain": "medium.com",
+   "title": "Stop fetching data in useEffect",
+   "excerpt": "Fetching in useEffect looks simple until you handle race conditions, loading flags, error states, caching and server rendering. Most teams end up rebuilding a worse version of a data library. Use your framework's data loading or a query library instead.",
+   "startedAt": 1791810817000,
+   "activeSecs": 156,
+   "scrollDepth": 0.83,
+   "fromUrl": "https://tkdodo.eu/blog/practical-react-query",
+   "tabId": 130,
+   "prevVisitId": "v_1791810380000_a81"
+  },
+  {
+   "id": "v_1791921900000_h10",
+   "url": "https://en.wikipedia.org/wiki/Espresso_machine",
+   "domain": "en.wikipedia.org",
+   "title": "Espresso machine - Wikipedia",
+   "excerpt": "An espresso machine brews coffee by forcing pressurized water near boiling point through a puck of ground coffee and a filter. Machines may be steam-driven, piston-driven, pump-driven or air-pump-driven, and range from manual levers to fully automatic designs.",
+   "startedAt": 1791921900000,
+   "activeSecs": 152,
+   "scrollDepth": 0.61,
+   "fromUrl": "https://www.google.com/",
+   "tabId": 140,
+   "prevVisitId": null
+  },
+  {
+   "id": "v_1791922077000_h21",
+   "url": "https://en.wikipedia.org/wiki/Coffea_arabica",
+   "domain": "en.wikipedia.org",
+   "title": "Coffea arabica - Wikipedia",
+   "excerpt": "Coffea arabica, also known as Arabica coffee, is a species of flowering plant in the coffee family. It is believed to be the first species of coffee to have been cultivated, and is the dominant cultivar, representing about 60% of global production. It is native to the highlands of Ethiopia.",
+   "startedAt": 1791922077000,
+   "activeSecs": 118,
+   "scrollDepth": 0.47,
+   "fromUrl": "https://en.wikipedia.org/wiki/Espresso_machine",
+   "tabId": 140,
+   "prevVisitId": "v_1791921900000_h10"
+  },
+  {
+   "id": "v_1791922220000_h32",
+   "url": "https://en.wikipedia.org/wiki/Coffee_production_in_Ethiopia",
+   "domain": "en.wikipedia.org",
+   "title": "Coffee production in Ethiopia - Wikipedia",
+   "excerpt": "Coffee production in Ethiopia is a longstanding tradition which dates back dozens of centuries. Ethiopia is where Coffea arabica originates, and the country remains one of the largest producers in Africa, with coffee central to its culture and economy.",
+   "startedAt": 1791922220000,
+   "activeSecs": 134,
+   "scrollDepth": 0.44,
+   "fromUrl": "https://en.wikipedia.org/wiki/Coffea_arabica",
+   "tabId": 140,
+   "prevVisitId": "v_1791922077000_h21"
+  },
+  {
+   "id": "v_1791922379000_h43",
+   "url": "https://en.wikipedia.org/wiki/Kingdom_of_Aksum",
+   "domain": "en.wikipedia.org",
+   "title": "Kingdom of Aksum - Wikipedia",
+   "excerpt": "The Kingdom of Aksum was a kingdom in East Africa and South Arabia from classical antiquity to the Middle Ages. A major trading power, Aksum traded with the Roman Empire and India, and minted its own coins, one of the few ancient African states to do so.",
+   "startedAt": 1791922379000,
+   "activeSecs": 176,
+   "scrollDepth": 0.5,
+   "fromUrl": "https://en.wikipedia.org/wiki/Coffee_production_in_Ethiopia",
+   "tabId": 140,
+   "prevVisitId": "v_1791922220000_h32"
+  },
+  {
+   "id": "v_1791922580000_h54",
+   "url": "https://en.wikipedia.org/wiki/Roman_Empire",
+   "domain": "en.wikipedia.org",
+   "title": "Roman Empire - Wikipedia",
+   "excerpt": "The Roman Empire was the state ruled by the Romans following Octavian's assumption of sole rule under the Principate in 27 BC. At its height it controlled the Mediterranean and much of Europe, North Africa and the Near East.",
+   "startedAt": 1791922580000,
+   "activeSecs": 203,
+   "scrollDepth": 0.38,
+   "fromUrl": "https://en.wikipedia.org/wiki/Kingdom_of_Aksum",
+   "tabId": 140,
+   "prevVisitId": "v_1791922379000_h43"
+  },
+  {
+   "id": "v_1791922808000_h65",
+   "url": "https://en.wikipedia.org/wiki/Augustus",
+   "domain": "en.wikipedia.org",
+   "title": "Augustus - Wikipedia",
+   "excerpt": "Augustus, born Gaius Octavius, was the first Roman emperor, reigning from 27 BC until his death in AD 14. His reign initiated an era of relative peace known as the Pax Romana, and he reformed taxation, built roads and reorganised the army.",
+   "startedAt": 1791922808000,
+   "activeSecs": 287,
+   "scrollDepth": 0.57,
+   "fromUrl": "https://en.wikipedia.org/wiki/Roman_Empire",
+   "tabId": 140,
+   "prevVisitId": "v_1791922580000_h54"
+  }
+ ],
+ "analyses": {
+  "v_1791536700000_a10": {
+   "visitId": "v_1791536700000_a10",
+   "topics": [
+    "React",
+    "Hooks"
+   ],
+   "concepts": [
+    "effect setup",
+    "cleanup function",
+    "dependency array"
+   ],
+   "sourceType": "docs",
+   "level": "intermediate",
+   "summary": "Reference for useEffect: declaring Effects, dependencies and cleanup.",
+   "embedding": [],
+   "threadId": "t_react_effects"
+  },
+  "v_1791536987000_a21": {
+   "visitId": "v_1791536987000_a21",
+   "topics": [
+    "React",
+    "Effects"
+   ],
+   "concepts": [
+    "external systems",
+    "Strict Mode double mount",
+    "cleanup"
+   ],
+   "sourceType": "docs",
+   "level": "intermediate",
+   "summary": "Guide to using Effects to sync components with systems outside React.",
+   "embedding": [],
+   "threadId": "t_react_effects"
+  },
+  "v_1791537330000_a42": {
+   "visitId": "v_1791537330000_a42",
+   "topics": [
+    "React",
+    "Data fetching"
+   ],
+   "concepts": [
+    "empty dependency array",
+    "exhaustive-deps lint rule"
+   ],
+   "sourceType": "forum",
+   "level": "intro",
+   "summary": "Q&A on running an effect once on mount with an empty dependency array.",
+   "embedding": [],
+   "threadId": "t_react_effects"
+  },
+  "v_1791577800000_b10": {
+   "visitId": "v_1791577800000_b10",
+   "topics": [
+    "Espresso",
+    "Coffee"
+   ],
+   "concepts": [
+    "pressure brewing",
+    "crema",
+    "fine grind"
+   ],
+   "sourceType": "reference",
+   "level": "intro",
+   "summary": "Encyclopedia overview of espresso, its history and brewing method.",
+   "embedding": [],
+   "threadId": "t_espresso"
+  },
+  "v_1791578123000_b41": {
+   "visitId": "v_1791578123000_b41",
+   "topics": [
+    "Espresso",
+    "Recipes"
+   ],
+   "concepts": [
+    "dose",
+    "yield",
+    "brew ratio"
+   ],
+   "sourceType": "blog",
+   "level": "intermediate",
+   "summary": "Breaks an espresso recipe into dose, yield and time.",
+   "embedding": [],
+   "threadId": "t_espresso"
+  },
+  "v_1791578489000_b62": {
+   "visitId": "v_1791578489000_b62",
+   "topics": [
+    "Espresso",
+    "Technique"
+   ],
+   "concepts": [
+    "puck prep",
+    "channeling",
+    "tamping"
+   ],
+   "sourceType": "blog",
+   "level": "intermediate",
+   "summary": "Practical walkthrough of puck preparation and pulling a shot.",
+   "embedding": [],
+   "threadId": "t_espresso"
+  },
+  "v_1791621600000_a30": {
+   "visitId": "v_1791621600000_a30",
+   "topics": [
+    "React",
+    "useEffect"
+   ],
+   "concepts": [
+    "each render has its own effects",
+    "stale closures",
+    "infinite loops"
+   ],
+   "sourceType": "blog",
+   "level": "advanced",
+   "summary": "Long-form mental model of useEffect built around renders capturing props and state.",
+   "embedding": [],
+   "threadId": "t_react_effects"
+  },
+  "v_1791622229000_a61": {
+   "visitId": "v_1791622229000_a61",
+   "topics": [
+    "React 18",
+    "Strict Mode"
+   ],
+   "concepts": [
+    "double invocation",
+    "cleanup",
+    "development only"
+   ],
+   "sourceType": "blog",
+   "level": "intro",
+   "summary": "Explains React 18 Strict Mode running effects twice in development.",
+   "embedding": [],
+   "threadId": "t_react_effects"
+  },
+  "v_1791622441000_a52": {
+   "visitId": "v_1791622441000_a52",
+   "topics": [
+    "React",
+    "Hooks"
+   ],
+   "concepts": [
+    "paint timing",
+    "layout measurement",
+    "flicker"
+   ],
+   "sourceType": "blog",
+   "level": "intermediate",
+   "summary": "When to use useLayoutEffect instead of useEffect, based on paint timing.",
+   "embedding": [],
+   "threadId": "t_react_effects"
+  },
+  "v_1791666900000_c20": {
+   "visitId": "v_1791666900000_c20",
+   "topics": [
+    "Ancient Rome",
+    "Coinage"
+   ],
+   "concepts": [
+    "denominations",
+    "debasement",
+    "metal content"
+   ],
+   "sourceType": "reference",
+   "level": "intro",
+   "summary": "Overview of Roman coins and how they changed from Republic to Empire.",
+   "embedding": [],
+   "threadId": "t_roman_history"
+  },
+  "v_1791667247000_c31": {
+   "visitId": "v_1791667247000_c31",
+   "topics": [
+    "Ancient Rome",
+    "Coinage"
+   ],
+   "concepts": [
+    "denarius",
+    "silver debasement",
+    "inflation"
+   ],
+   "sourceType": "reference",
+   "level": "intermediate",
+   "summary": "History of the denarius and its gradual debasement.",
+   "embedding": [],
+   "threadId": "t_roman_history"
+  },
+  "v_1791713700000_b20": {
+   "visitId": "v_1791713700000_b20",
+   "topics": [
+    "Espresso",
+    "Dialing in"
+   ],
+   "concepts": [
+    "grind size",
+    "under-extraction",
+    "change one variable"
+   ],
+   "sourceType": "forum",
+   "level": "intermediate",
+   "summary": "Forum thread on a step-by-step process for dialing in espresso.",
+   "embedding": [],
+   "threadId": "t_espresso"
+  },
+  "v_1791714102000_b31": {
+   "visitId": "v_1791714102000_b31",
+   "topics": [
+    "Espresso",
+    "Dialing in"
+   ],
+   "concepts": [
+    "1:2 ratio",
+    "shot time",
+    "fresh beans"
+   ],
+   "sourceType": "forum",
+   "level": "intro",
+   "summary": "Community guide to a beginner espresso recipe and taste-based adjustments.",
+   "embedding": [],
+   "threadId": "t_espresso"
+  },
+  "v_1791747900000_c40": {
+   "visitId": "v_1791747900000_c40",
+   "topics": [
+    "Ancient Rome",
+    "Crisis"
+   ],
+   "concepts": [
+    "civil war",
+    "economic depression",
+    "end of the crisis"
+   ],
+   "sourceType": "reference",
+   "level": "intermediate",
+   "summary": "The near-collapse of the Roman Empire between 235 and 284 AD.",
+   "embedding": [],
+   "threadId": "t_roman_history"
+  },
+  "v_1791748356000_c51": {
+   "visitId": "v_1791748356000_c51",
+   "topics": [
+    "Ancient Rome",
+    "Emperors"
+   ],
+   "concepts": [
+    "Tetrarchy",
+    "currency reform",
+    "Edict on Maximum Prices"
+   ],
+   "sourceType": "reference",
+   "level": "intermediate",
+   "summary": "Biography of Diocletian and his administrative and monetary reforms.",
+   "embedding": [],
+   "threadId": "t_roman_history"
+  },
+  "v_1791793800000_b50": {
+   "visitId": "v_1791793800000_b50",
+   "topics": [
+    "Coffee",
+    "Roasting"
+   ],
+   "concepts": [
+    "roast level",
+    "Maillard reaction",
+    "origin character"
+   ],
+   "sourceType": "reference",
+   "level": "intro",
+   "summary": "How roasting changes green beans and shapes coffee flavour.",
+   "embedding": [],
+   "threadId": "t_espresso"
+  },
+  "v_1791810000000_a70": {
+   "visitId": "v_1791810000000_a70",
+   "topics": [
+    "React",
+    "Effects"
+   ],
+   "concepts": [
+    "reactive values",
+    "start and stop synchronizing",
+    "dependencies"
+   ],
+   "sourceType": "docs",
+   "level": "advanced",
+   "summary": "How an Effect starts and stops synchronizing as its reactive dependencies change.",
+   "embedding": [],
+   "threadId": "t_react_effects"
+  },
+  "v_1791810380000_a81": {
+   "visitId": "v_1791810380000_a81",
+   "topics": [
+    "React Query",
+    "Data fetching"
+   ],
+   "concepts": [
+    "async state",
+    "query keys",
+    "caching"
+   ],
+   "sourceType": "blog",
+   "level": "intermediate",
+   "summary": "Argues for React Query over hand-written fetching effects.",
+   "embedding": [],
+   "threadId": "t_react_effects"
+  },
+  "v_1791810817000_a92": {
+   "visitId": "v_1791810817000_a92",
+   "topics": [
+    "React",
+    "Data fetching"
+   ],
+   "concepts": [
+    "race conditions",
+    "framework data loading"
+   ],
+   "sourceType": "blog",
+   "level": "intro",
+   "summary": "Opinion piece on why fetching inside useEffect causes problems.",
+   "embedding": [],
+   "threadId": "t_react_effects"
+  },
+  "v_1791921900000_h10": {
+   "visitId": "v_1791921900000_h10",
+   "topics": [
+    "Espresso",
+    "Equipment"
+   ],
+   "concepts": [
+    "pump pressure",
+    "lever machines",
+    "boilers"
+   ],
+   "sourceType": "reference",
+   "level": "intro",
+   "summary": "Types and history of espresso machines.",
+   "embedding": [],
+   "threadId": "t_espresso"
+  },
+  "v_1791922077000_h21": {
+   "visitId": "v_1791922077000_h21",
+   "topics": [
+    "Coffee",
+    "Botany"
+   ],
+   "concepts": [
+    "Arabica",
+    "cultivation",
+    "Ethiopian origin"
+   ],
+   "sourceType": "reference",
+   "level": "intro",
+   "summary": "The Arabica coffee plant, its origins and its share of world production.",
+   "embedding": [],
+   "threadId": "t_espresso"
+  },
+  "v_1791922220000_h32": {
+   "visitId": "v_1791922220000_h32",
+   "topics": [
+    "Coffee",
+    "Ethiopia"
+   ],
+   "concepts": [
+    "coffee origins",
+    "coffee ceremony",
+    "exports"
+   ],
+   "sourceType": "reference",
+   "level": "intro",
+   "summary": "Ethiopia's long history as the birthplace and a major producer of coffee.",
+   "embedding": [],
+   "threadId": "t_espresso"
+  },
+  "v_1791922379000_h43": {
+   "visitId": "v_1791922379000_h43",
+   "topics": [
+    "Aksum",
+    "Ancient trade"
+   ],
+   "concepts": [
+    "Red Sea trade",
+    "Aksumite coinage",
+    "trade with Rome"
+   ],
+   "sourceType": "reference",
+   "level": "intro",
+   "summary": "The Aksumite trading kingdom and its links to Rome and India.",
+   "embedding": [],
+   "threadId": "t_roman_history"
+  },
+  "v_1791922580000_h54": {
+   "visitId": "v_1791922580000_h54",
+   "topics": [
+    "Ancient Rome",
+    "Empire"
+   ],
+   "concepts": [
+    "Principate",
+    "territorial extent",
+    "Octavian"
+   ],
+   "sourceType": "reference",
+   "level": "intro",
+   "summary": "Overview of the Roman Empire from the Principate onward.",
+   "embedding": [],
+   "threadId": "t_roman_history"
+  },
+  "v_1791922808000_h65": {
+   "visitId": "v_1791922808000_h65",
+   "topics": [
+    "Ancient Rome",
+    "Emperors"
+   ],
+   "concepts": [
+    "Pax Romana",
+    "first emperor",
+    "reforms"
+   ],
+   "sourceType": "reference",
+   "level": "intro",
+   "summary": "Life and reign of Augustus, the first Roman emperor.",
+   "embedding": [],
+   "threadId": "t_roman_history"
+  }
+ },
+ "threads": [
+  {
+   "id": "t_react_effects",
+   "label": "React effects",
+   "visitIds": [
+    "v_1791536700000_a10",
+    "v_1791536987000_a21",
+    "v_1791537330000_a42",
+    "v_1791621600000_a30",
+    "v_1791622229000_a61",
+    "v_1791622441000_a52",
+    "v_1791810000000_a70",
+    "v_1791810380000_a81",
+    "v_1791810817000_a92"
+   ],
+   "minutes": 44,
+   "sourceMix": {
+    "docs": 3,
+    "forum": 1,
+    "blog": 5
+   },
+   "centroid": [],
+   "firstSeen": 1791536700000,
+   "lastSeen": 1791810817000
+  },
+  {
+   "id": "t_espresso",
+   "label": "Espresso",
+   "visitIds": [
+    "v_1791577800000_b10",
+    "v_1791578123000_b41",
+    "v_1791578489000_b62",
+    "v_1791713700000_b20",
+    "v_1791714102000_b31",
+    "v_1791793800000_b50",
+    "v_1791921900000_h10",
+    "v_1791922077000_h21",
+    "v_1791922220000_h32"
+   ],
+   "minutes": 36,
+   "sourceMix": {
+    "reference": 5,
+    "blog": 2,
+    "forum": 2
+   },
+   "centroid": [],
+   "firstSeen": 1791577800000,
+   "lastSeen": 1791922220000
+  },
+  {
+   "id": "t_roman_history",
+   "label": "Roman history",
+   "visitIds": [
+    "v_1791666900000_c20",
+    "v_1791667247000_c31",
+    "v_1791747900000_c40",
+    "v_1791748356000_c51",
+    "v_1791922379000_h43",
+    "v_1791922580000_h54",
+    "v_1791922808000_h65"
+   ],
+   "minutes": 35,
+   "sourceMix": {
+    "reference": 7
+   },
+   "centroid": [],
+   "firstSeen": 1791666900000,
+   "lastSeen": 1791922808000
+  }
+ ],
+ "hole": {
+  "startVisitId": "v_1791921900000_h10",
+  "hops": [
+   {
+    "visitId": "v_1791921900000_h10",
+    "title": "Espresso machine - Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Espresso_machine",
+    "similarity": 1.0
+   },
+   {
+    "visitId": "v_1791922077000_h21",
+    "title": "Coffea arabica - Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Coffea_arabica",
+    "similarity": 0.82
+   },
+   {
+    "visitId": "v_1791922220000_h32",
+    "title": "Coffee production in Ethiopia - Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Coffee_production_in_Ethiopia",
+    "similarity": 0.66
+   },
+   {
+    "visitId": "v_1791922379000_h43",
+    "title": "Kingdom of Aksum - Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Kingdom_of_Aksum",
+    "similarity": 0.38
+   },
+   {
+    "visitId": "v_1791922580000_h54",
+    "title": "Roman Empire - Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Roman_Empire",
+    "similarity": 0.27
+   },
+   {
+    "visitId": "v_1791922808000_h65",
+    "title": "Augustus - Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Augustus",
+    "similarity": 0.21
+   }
+  ],
+  "depth": 6,
+  "alerted": true,
+  "updatedAt": 1791922808000
+ },
+ "insights": {
+  "generatedAt": 1791925200000,
+  "recap": "This week you spent most of your reading time on React effects (mostly blog posts), kept dialing in espresso, and on Tuesday night drifted from espresso machines to Augustus in six links.",
+  "gaps": [
+   {
+    "threadId": "t_react_effects",
+    "text": "Three blog posts argue against fetching in effects, but you haven't read React's own guide 'You Might Not Need an Effect'.",
+    "query": "react.dev you might not need an effect"
+   },
+   {
+    "threadId": "t_espresso",
+    "text": "You've covered grind, ratio and puck prep, but nothing on brew water temperature.",
+    "query": "espresso brew water temperature extraction"
+   }
+  ],
+  "quiz": [
+   {
+    "q": "When does React run an effect's cleanup function?",
+    "options": [
+     "Only when the component unmounts",
+     "Before the effect runs again, and on unmount",
+     "After every render, before paint",
+     "Never automatically"
+    ],
+    "answer": 1,
+    "visitId": "v_1791536700000_a10"
+   },
+   {
+    "q": "A common starting ratio for an espresso recipe is roughly:",
+    "options": [
+     "1:1",
+     "1:2",
+     "1:5",
+     "1:15"
+    ],
+    "answer": 1,
+    "visitId": "v_1791578123000_b41"
+   },
+   {
+    "q": "Which emperor ended the Crisis of the Third Century?",
+    "options": [
+     "Augustus",
+     "Nero",
+     "Diocletian",
+     "Hadrian"
+    ],
+    "answer": 2,
+    "visitId": "v_1791748356000_c51"
+   }
+  ],
+  "nextReads": [
+   {
+    "threadId": "t_roman_history",
+    "why": "You read about the denarius losing silver; Diocletian's reform tried to fix it.",
+    "query": "Diocletian currency reform 301 AD"
+   },
+   {
+    "threadId": "t_react_effects",
+    "why": "You keep landing on data fetching; the React docs cover it directly.",
+    "query": "react.dev fetching data with effects alternatives"
+   }
+  ]
+ }
+}

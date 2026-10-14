@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Rabbit Hole",
+  "version": "0.1.0",
+  "description": "Maps what you actually read and tailors what you read next.",
+  "permissions": ["storage", "unlimitedStorage", "tabs", "sidePanel"],
+  "host_permissions": ["<all_urls>"],
+  "background": { "service_worker": "background/worker.js", "type": "module" },
+  "content_scripts": [{
+    "matches": ["http://*/*", "https://*/*"],
+    "js": ["shared/config.js", "lib/Readability.js", "content/capture.js", "content/toast.js"],
+    "run_at": "document_idle"
+  }],
+  "side_panel": { "default_path": "sidepanel/sidepanel.html" },
+  "options_page": "options/options.html",
+  "action": { "default_title": "Rabbit Hole" }
+}
