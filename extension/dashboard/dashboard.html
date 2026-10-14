@@ -7,7 +7,12 @@
 </head>
 <body>
   <!-- Owner: Marc (P3). Stats, topic map, insights, quiz. -->
-  <main id="app">Rabbit Hole dashboard (stub)</main>
+  <main id="app">
+    <header class="topbar"><div><p class="eyebrow">TRACKER & TAILOR</p><h1>Rabbit Hole</h1><p class="lede">A map of what pulled your attention away from the starting point.</p></div><button class="button button-accent" id="generate-insights" type="button">Generate insights</button></header>
+    <section class="stats" aria-label="Reading stats"><article class="stat"><span>Pages read</span><strong id="pages-read">0</strong></article><article class="stat"><span>Active minutes</span><strong id="active-minutes">0</strong></article><article class="stat"><span>Threads</span><strong id="thread-count">0</strong></article><article class="stat stat-hole"><span>Current hole</span><strong id="hole-depth">0 hops</strong></article></section>
+    <div id="empty-state" class="empty-state" hidden>No reading yet. Open Options → Load demo data.</div>
+    <section class="workspace" id="workspace"><article class="panel map-panel"><div class="panel-heading"><div><p class="eyebrow">ATTENTION MAP</p><h2>Threads and detours</h2></div><span class="hint">Click a thread</span></div><div id="topic-map" class="topic-map" aria-label="Topic map"></div><div id="thread-pages" class="thread-pages" hidden></div></article><aside class="panel insights-panel"><div class="panel-heading"><div><p class="eyebrow">TAILOR</p><h2>Insights</h2></div></div><div id="insights-content"><p class="muted">Generate insights after you have a few pages in your trail.</p></div></aside></section>
+  </main>
   <script src="../lib/vis-network.min.js"></script>
   <script src="dashboard.js"></script>
 </body>
