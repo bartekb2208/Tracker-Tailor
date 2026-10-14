@@ -2,11 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Rabbit Hole options</title>
+  <link rel="stylesheet" href="options.css">
 </head>
 <body>
-  <!-- Owner: Luke (P1). API key, Demo mode, Pause, Load demo data, Rebuild with AI, Clear data. -->
-  <main id="app">Rabbit Hole options (stub)</main>
+  <main>
+    <h1>Rabbit Hole options</h1>
+    <form id="settings-form">
+      <label for="api-key">Anthropic API key</label>
+      <input id="api-key" type="password" autocomplete="off" spellcheck="false">
+      <p>Optional. Leave blank to use mock mode without an API key.</p>
+      <label class="toggle"><input id="demo-mode" type="checkbox"> Demo mode (faster capture)</label>
+      <label class="toggle"><input id="paused" type="checkbox"> Pause capture</label>
+      <button id="save" type="submit">Save settings</button>
+      <output id="save-status" role="status" aria-live="polite"></output>
+    </form>
+    <h2>Data and dashboard</h2>
+    <p>Clear data removes captured visits and analysis but keeps your settings.</p>
+    <div class="action"><button id="load-seed" type="button">Load demo data</button><output id="load-seed-status" role="status" aria-live="polite"></output></div>
+    <div class="action"><button id="reindex" type="button">Rebuild with AI</button><output id="reindex-status" role="status" aria-live="polite"></output></div>
+    <div class="action"><button id="clear-data" type="button">Clear data</button><output id="clear-data-status" role="status" aria-live="polite"></output></div>
+    <div class="action"><button id="open-dashboard" type="button">Open dashboard</button><output id="open-dashboard-status" role="status" aria-live="polite"></output></div>
+  </main>
   <script src="options.js"></script>
 </body>
 </html>
