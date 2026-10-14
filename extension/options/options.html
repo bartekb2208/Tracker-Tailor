@@ -5,8 +5,31 @@
   <title>Rabbit Hole options</title>
 </head>
 <body>
-  <!-- Owner: Luke (P1). API key, Demo mode, Pause, Load demo data, Rebuild with AI, Clear data. -->
-  <main id="app">Rabbit Hole options (stub)</main>
+  <main id="app">
+    <h1>Rabbit Hole options</h1>
+    <p>Control capture, demo data, and analysis.</p>
+    <form id="settings-form">
+      <label>Anthropic API key <input id="api-key" type="password" autocomplete="off"></label>
+      <label><input id="demo-mode" type="checkbox"> Demo mode</label>
+      <label><input id="paused" type="checkbox"> Pause capture</label>
+      <button type="submit">Save settings</button><span id="settings-status" role="status"></span>
+    </form>
+    <section aria-labelledby="data-heading">
+      <h2 id="data-heading">Data</h2>
+      <p><button class="action" data-message="LOAD_SEED" type="button">Load demo data</button><span id="status-LOAD_SEED" role="status"></span></p>
+      <p><button class="action" data-message="REINDEX" type="button">Rebuild with AI</button><span id="status-REINDEX" role="status"></span></p>
+      <p><button class="action" data-message="CLEAR_DATA" type="button">Clear data</button><span id="status-CLEAR_DATA" role="status"></span></p>
+    </section>
+    <button id="open-dashboard" type="button">Open dashboard</button>
+  </main>
+  <style>
+    body { font: 15px system-ui, sans-serif; margin: 0; padding: 24px; }
+    main { max-width: 560px; }
+    label { display: block; margin: 14px 0; }
+    input[type="password"] { display: block; margin-top: 6px; padding: 8px; width: 100%; }
+    button { cursor: pointer; padding: 8px 12px; }
+    [role="status"] { margin-left: 10px; }
+  </style>
   <script src="options.js"></script>
 </body>
 </html>

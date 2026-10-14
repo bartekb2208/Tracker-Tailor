@@ -9,6 +9,7 @@ const DATA_KEYS = ["visits", "tabState", "analyses", "threads", "hole", "insight
 
 chrome.runtime.onInstalled.addListener(() => {
   chrome.sidePanel.setPanelBehavior({ openPanelOnActionClick: true }).catch(console.error);
+  chrome.action.setBadgeBackgroundColor({ color: "#d85d35" });
 });
 
 chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
@@ -45,6 +46,7 @@ async function captured(visit, tab) {
   if (visits.some((v) => v.id === visit.id)) return {};
 
   const now = Date.now();
+  if (visits.some((v) => v.url === visit.url && now - Number(v.startedAt || 0) < 120000)) return {};
   const recent = (s) => (s && now - s.at < CFG.CHAIN_GAP_MINS * 60000 ? s.visitId : null);
   visit.tabId = tab?.id ?? null;
   visit.prevVisitId = recent(tabState[visit.tabId]) ?? recent(tabState[tab?.openerTabId]) ?? null;
@@ -75,4 +77,5 @@ chrome.storage.onChanged.addListener((changes, area) => {
   if (area !== "local" || !("hole" in changes)) return;
   const depth = changes.hole.newValue?.depth ?? 0;
   chrome.action.setBadgeText({ text: depth >= 2 ? String(depth) : "" });
+  chrome.action.setBadgeBackgroundColor({ color: "#d85d35" });
 });
